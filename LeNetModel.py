@@ -5,6 +5,9 @@ from medmnist import PathMNIST
 from torchvision import transforms
 from torch.utils.data import DataLoader
 
+# This is a most first model experiment for the PathMNIST dataset. 
+# The algorithm for this model is very fast. 
+
 # Define the LeNet model 
 # Attention: This model is very simlpe with only 2 convolutional layers and 3 fully connected layers.
 # The function of this model is to show how to use the PathMNIST dataset to train a simple model.
