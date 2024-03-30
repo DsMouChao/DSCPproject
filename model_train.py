@@ -6,7 +6,7 @@ from torchvision import transforms
 import numpy as np
 import torch
 import matplotlib.pyplot as plt
-from model import LeNet,LeNet2
+from model import LeNet, ResNet, AlexNet
 
 # This file as template for the training process of the model, 
 # no need to modify this file bigly for later use.
@@ -14,7 +14,11 @@ from model import LeNet,LeNet2
 
 def train_val_data_process():
     # Load the training and validation data
-    train_data = PathMNIST(root='./data/train', split="train",transform= transforms.Compose([transforms.Resize(28),transforms.ToTensor()]), download=False)
+    transform = transforms.Compose([
+        transforms.ToTensor(),  # Convert PIL images to tensors.
+        transforms.Normalize((0.5,), (0.5,))  # Normalize images.
+    ])
+    train_data = PathMNIST(root='./data/train', split="train",transform = transform, download=False)
 
     train_data, val_data = torch.utils.data.random_split(train_data, [round(0.8*len(train_data)), round(0.2*len(train_data))])
     
@@ -119,7 +123,16 @@ def train_model_process(model,train_loader,val_loader,num_epochs):
     # save the best model parameters
     torch.save(best_model_wts, 'best_model.pth')
 
-    train_process = pd.DataFrame(data={"epoch":range(num_epochs),'train_loss':train_loss_all,'val_loss':val_loss_all,'train_acc':train_acc_all,'val_acc':val_acc_all})
+    # copy vectors to cpux
+    train_acc_all = [i.cpu().numpy() for i in train_acc_all]
+    val_acc_all = [i.cpu().numpy() for i in val_acc_all]
+    train_process = pd.DataFrame(data={
+        "epoch":range(num_epochs),
+        'train_loss':train_loss_all,
+        'val_loss':val_loss_all,
+        'train_acc':train_acc_all,
+        'val_acc':val_acc_all
+    })
     return train_process
     
 def graph(train_procss):
@@ -138,10 +151,11 @@ def graph(train_procss):
     plt.legend()
     plt.xlabel('epoch')
     plt.ylabel('acc')
+    plt.savefig('train_process.png')
     plt.show()
 
 if __name__ == "__main__":
-    lenet = LeNet2(9)
+    lenet = ResNet(9,use_se=True)
     train_dataloader, val_dataloader = train_val_data_process()
     train_process = train_model_process(lenet,train_dataloader,val_dataloader,10)
     graph(train_process)
