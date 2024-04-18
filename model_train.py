@@ -1,3 +1,4 @@
+import argparse
 import copy
 import time
 import pandas as pd
@@ -8,32 +9,40 @@ import torch
 import matplotlib.pyplot as plt
 from model import LeNet, ResNet, AlexNet
 
-# This file as template for the training process of the model, 
-# no need to modify this file bigly for later use.
-# This file could save the best model parameters and generate the training process graph.
+def get_args():
+    parser = argparse.ArgumentParser(description="Training configuration")
+    parser.add_argument('--model', type=str, default='LeNet', help='Model type: LeNet, ResNet, AlexNet')
+    parser.add_argument('--image_size', type=int, default=28, help='Image size (one side of the square)')
+    parser.add_argument('--use_se', action='store_true', help='Use SE (Squeeze-and-Excitation) blocks if set')
+    args = parser.parse_args()
+    return args
 
-def train_val_data_process():
+def filename_generator(base_name, model, image_size, use_se):
+    se_suffix = "_SE" if use_se else ""
+    return f"{base_name}_{model}_{image_size}x{image_size}{se_suffix}"
+
+def train_val_data_process(image_size):
     # Load the training and validation data
     transform = transforms.Compose([
         transforms.ToTensor(),  # Convert PIL images to tensors.
         transforms.Normalize((0.5,), (0.5,))  # Normalize images.
     ])
-    train_data = PathMNIST(root='./data/train', split="train",transform = transform, download=False)
+    train_data = PathMNIST(root='./data', split="train",transform = transform,size=image_size, download=False)
 
     train_data, val_data = torch.utils.data.random_split(train_data, [round(0.8*len(train_data)), round(0.2*len(train_data))])
     
     # Create the dataloaders
-    train_loader = torch.utils.data.DataLoader(train_data, batch_size=64, shuffle=True, num_workers=8)
+    train_loader = torch.utils.data.DataLoader(train_data, batch_size=8, shuffle=True, num_workers=8)
 
-    val_loader = torch.utils.data.DataLoader(val_data, batch_size=64, shuffle=True, num_workers=8)
+    val_loader = torch.utils.data.DataLoader(val_data, batch_size=8, shuffle=True, num_workers=8)
     
     # Return the dataloaders
     return train_loader, val_loader
 
 
-def train_model_process(model,train_loader,val_loader,num_epochs):
+def train_model_process(model,train_loader,val_loader,num_epochs,filename):
     device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')# Check if a GPU is available
-
+    
     optimizer = torch.optim.Adam(model.parameters(), lr=0.001) # Define the optimizer.
 
     criterion = torch.nn.CrossEntropyLoss() # Define the loss function, 
@@ -121,7 +130,7 @@ def train_model_process(model,train_loader,val_loader,num_epochs):
         print('Training complete in {:.0f}m {:.0f}s'.format(time_elapsed // 60, time_elapsed % 60))
         
     # save the best model parameters
-    torch.save(best_model_wts, 'best_model.pth')
+    torch.save(best_model_wts, f'{filename}.pth')
 
     # copy vectors to cpux
     train_acc_all = [i.cpu().numpy() for i in train_acc_all]
@@ -133,9 +142,15 @@ def train_model_process(model,train_loader,val_loader,num_epochs):
         'train_acc':train_acc_all,
         'val_acc':val_acc_all
     })
+    
+     # Save DataFrame to CSV
+    csv_filename = f'{filename}_training_data.csv'
+    train_process.to_csv(csv_filename, index=False)
+    print(f'Training data saved to {csv_filename}')
+    
     return train_process
     
-def graph(train_procss):
+def graph(train_procss,filename):
     plt.figure(figsize=(12, 5))
     plt.subplot(1, 2, 1)
     plt.plot(train_procss['epoch'],train_process["train_loss"],"ro-",label='train_loss')
@@ -151,14 +166,17 @@ def graph(train_procss):
     plt.legend()
     plt.xlabel('epoch')
     plt.ylabel('acc')
-    plt.savefig('train_process.png')
-    plt.show()
+    plt.savefig(f'{filename}.png')
 
 if __name__ == "__main__":
-    lenet = ResNet(9,use_se=True)
-    train_dataloader, val_dataloader = train_val_data_process()
-    train_process = train_model_process(lenet,train_dataloader,val_dataloader,10)
-    graph(train_process)
+    args = get_args()
+    model_dict = {'LeNet': LeNet, 'ResNet': ResNet, 'AlexNet': AlexNet}
+    model = model_dict[args.model](args.image_size, use_se=args.use_se,image_size=args.image_size)
+    filename = filename_generator('output', args.model, args.image_size, args.use_se)
+
+    train_dataloader, val_dataloader = train_val_data_process(args.image_size)
+    train_process = train_model_process(model,train_dataloader,val_dataloader,20,filename)
+    graph(train_process,filename)
 
 
 

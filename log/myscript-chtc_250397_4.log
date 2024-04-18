@@ -1,0 +1,73 @@
+000 (250397.004.000) 2024-04-17 10:08:48 Job submitted from host: <128.104.100.148:9618?addrs=128.104.100.148-9618+[2607-f388-107c-501-216-3eff-feb2-bc11]-9618&alias=learn.chtc.wisc.edu&noUDP&sock=schedd_1351356_64bc>
+...
+040 (250397.004.000) 2024-04-17 10:54:54 Started transferring input files
+	Transferring to host: <128.104.103.48:9618?addrs=128.104.103.48-9618+[2607-f388-107c-501-ae1f-6bff-fe2c-2f00]-9618&alias=vetsigian0001.chtc.wisc.edu&noUDP&sock=slot1_3_11412_8949_11376>
+...
+040 (250397.004.000) 2024-04-17 11:03:24 Finished transferring input files
+...
+001 (250397.004.000) 2024-04-17 11:03:25 Job executing on host: <128.104.103.48:9618?addrs=128.104.103.48-9618+[2607-f388-107c-501-ae1f-6bff-fe2c-2f00]-9618&alias=vetsigian0001.chtc.wisc.edu&noUDP&sock=startd_11061_8124>
+	SlotName: slot1_3@vetsigian0001.chtc.wisc.edu
+	AvailableGPUs = { GPUs_GPU_a2d98c30,GPUs_GPU_50a8c916 }
+	CondorScratchDir = "/var/lib/condor/execute/slot1/dir_217232"
+	Cpus = 1
+	Disk = 56077985
+	GPUs = 2
+	GPUs_GPU_50a8c916 = [ Id = "GPU-50a8c916"; Capability = 7.5; DeviceName = "NVIDIA GeForce RTX 2080 Ti"; DeviceUuid = "50a8c916-7756-d8de-be06-87b4422ee137"; ECCEnabled = false; DriverVersion = 12.4; DevicePciBusId = "0000:88:00.0"; GlobalMemoryMb = 11004; MaxSupportedVersion = 12040 ]
+	GPUs_GPU_a2d98c30 = [ Id = "GPU-a2d98c30"; Capability = 7.5; DeviceName = "NVIDIA GeForce RTX 2080 Ti"; DeviceUuid = "a2d98c30-a687-6d65-26dc-3e29e88308b6"; ECCEnabled = false; DriverVersion = 12.4; DevicePciBusId = "0000:3D:00.0"; GlobalMemoryMb = 11004; MaxSupportedVersion = 12040 ]
+	IoHeavy = 0
+	Memory = 40960
+...
+006 (250397.004.000) 2024-04-17 11:03:34 Image size of job updated: 1
+	0  -  MemoryUsage of job (MB)
+	0  -  ResidentSetSize of job (KB)
+...
+006 (250397.004.000) 2024-04-17 11:08:35 Image size of job updated: 7858848
+	7675  -  MemoryUsage of job (MB)
+	7858848  -  ResidentSetSize of job (KB)
+...
+006 (250397.004.000) 2024-04-17 11:13:35 Image size of job updated: 17242180
+	16839  -  MemoryUsage of job (MB)
+	17242180  -  ResidentSetSize of job (KB)
+...
+006 (250397.004.000) 2024-04-17 11:18:35 Image size of job updated: 19592168
+	19059  -  MemoryUsage of job (MB)
+	19515936  -  ResidentSetSize of job (KB)
+...
+006 (250397.004.000) 2024-04-17 11:23:35 Image size of job updated: 19592168
+	19091  -  MemoryUsage of job (MB)
+	19549052  -  ResidentSetSize of job (KB)
+...
+006 (250397.004.000) 2024-04-17 11:33:36 Image size of job updated: 19592168
+	19095  -  MemoryUsage of job (MB)
+	19552636  -  ResidentSetSize of job (KB)
+...
+006 (250397.004.000) 2024-04-17 11:38:37 Image size of job updated: 19592168
+	19096  -  MemoryUsage of job (MB)
+	19553436  -  ResidentSetSize of job (KB)
+...
+040 (250397.004.000) 2024-04-17 13:19:31 Started transferring output files
+...
+040 (250397.004.000) 2024-04-17 13:19:33 Finished transferring output files
+...
+005 (250397.004.000) 2024-04-17 13:19:33 Job terminated.
+	(1) Normal termination (return value 0)
+		Usr 0 02:22:10, Sys 0 00:05:28  -  Run Remote Usage
+		Usr 0 00:00:00, Sys 0 00:00:00  -  Run Local Usage
+		Usr 0 02:22:10, Sys 0 00:05:28  -  Total Remote Usage
+		Usr 0 00:00:00, Sys 0 00:00:00  -  Total Local Usage
+	45220288  -  Run Bytes Sent By Job
+	15796412416  -  Run Bytes Received By Job
+	45220288  -  Total Bytes Sent By Job
+	15796412416  -  Total Bytes Received By Job
+	Partitionable Resources :       Usage  Request Allocated Assigned
+	   Cpus                 :        1.02        1         1 
+	   Disk (KB)            : 33637767    52428800  56077985 
+	   GPUs                 :                    2         2 "GPU-a2d98c30,GPU-50a8c916"
+	   GpusMemory (MB)      :      264                       
+	   IoHeavy              :                              0 
+	   Memory (MB)          :    19096       40960     40960 
+	   TimeExecute (s)      :     8166                       
+	   TimeSlotBusy (s)     :     8679                       
+
+	Job terminated of its own accord at 2024-04-17T18:19:31Z with exit-code 0.
+...

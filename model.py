@@ -51,7 +51,7 @@ class Residual(nn.Module):
         return self.relu(y)
     
 class ResNet(nn.Module):
-    def __init__(self, num_classes=9, use_se=False):
+    def __init__(self, num_classes=9, use_se=False,image_size=28):
         super(ResNet, self).__init__()
         self.b1 = nn.Sequential(
             nn.Conv2d(in_channels=3, out_channels=64, kernel_size=3, stride=1, padding=1),
@@ -92,8 +92,13 @@ class ResNet(nn.Module):
 
 
 class AlexNet(nn.Module):
-    def __init__(self, num_classes=9, use_se=False):
+    def __init__(self, num_classes=9, use_se=False,image_size=28):
         super(AlexNet, self).__init__()
+        if image_size ==28:
+            final_conv_size = 9216
+        elif image_size == 224:
+            final_conv_size = 774400
+
         self.ReLU = nn.ReLU()
         self.c1 = nn.Conv2d(in_channels=3, out_channels=96, kernel_size=3, stride=1, padding=1)
         self.s2 = nn.MaxPool2d(kernel_size=3, stride=2)
@@ -108,7 +113,7 @@ class AlexNet(nn.Module):
         self.c7 = nn.Conv2d(in_channels=384, out_channels=256, kernel_size=3, padding=1)
         self.se5 = SEBlock(256) if use_se else nn.Identity()
         self.flatten = nn.Flatten()
-        self.f9 = nn.Linear(9216, 4096)
+        self.f9 = nn.Linear(final_conv_size, 4096)
         self.f10 = nn.Linear(4096, 4096)
         self.f11 = nn.Linear(4096, num_classes)
     
@@ -136,13 +141,18 @@ class AlexNet(nn.Module):
     
 
 class LeNet(nn.Module):
-    def __init__(self, num_classes=9,use_se=False):# 9 classes
+    def __init__(self, num_classes=9,use_se=False,image_size=28):# 9 classes
         super(LeNet,self).__init__()
+        if image_size == 28:
+            final_linear_size = 16 * 4 * 4
+        elif image_size == 224:
+            final_linear_size = 16 * 53 * 53
+
         self.conv1 = nn.Conv2d(3, 6, 5)# 3 channels, 6 output channels, 5x5 kernel
         self.se1 = SEBlock(6) if use_se else nn.Identity()
         self.conv2 = nn.Conv2d(6, 16, 5)# 6 input channels, 16 output channels, 5x5 kernel
         self.se2 = SEBlock(16) if use_se else nn.Identity()
-        self.fc1 = nn.Linear(16*4*4, 120)# 16*4*4 input features, 120 output features
+        self.fc1 = nn.Linear(final_linear_size, 120)# 16*4*4 input features, 120 output features
         self.fc2 = nn.Linear(120, 84)# 120 input features, 84 output features
         self.fc3 = nn.Linear(84, num_classes)  # 84 input features, 9 output features
 

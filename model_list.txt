@@ -1,0 +1,8 @@
+--model LeNet --image_size 28 --use_se
+--model LeNet --image_size 28
+--model LeNet --image_size 224 --use_se
+--model LeNet --image_size 224
+--model ResNet --image_size 28 --use_se
+--model ResNet --image_size 28
+--model ResNet --image_size 224 --use_se
+--model ResNet --image_size 224

@@ -1,0 +1,85 @@
+000 (250397.005.000) 2024-04-17 10:08:48 Job submitted from host: <128.104.100.148:9618?addrs=128.104.100.148-9618+[2607-f388-107c-501-216-3eff-feb2-bc11]-9618&alias=learn.chtc.wisc.edu&noUDP&sock=schedd_1351356_64bc>
+...
+040 (250397.005.000) 2024-04-17 10:57:55 Started transferring input files
+	Transferring to host: <128.105.68.140:9618?addrs=128.105.68.140-9618+[2607-f388-2200-100-b226-28ff-fe24-bd78]-9618&alias=gpu2000.chtc.wisc.edu&noUDP&sock=slot1_1_3747780_cccb_23858>
+...
+040 (250397.005.000) 2024-04-17 11:04:29 Finished transferring input files
+...
+001 (250397.005.000) 2024-04-17 11:04:30 Job executing on host: <128.105.68.140:9618?addrs=128.105.68.140-9618+[2607-f388-2200-100-b226-28ff-fe24-bd78]-9618&alias=gpu2000.chtc.wisc.edu&noUDP&sock=startd_11411_934a>
+	SlotName: slot1_1@gpu2000.chtc.wisc.edu
+	AvailableGPUs = { GPUs_GPU_02c7070c,GPUs_GPU_649ceda8 }
+	CondorScratchDir = "/var/lib/condor/execute/slot1/dir_1590909"
+	Cpus = 1
+	Disk = 53635860
+	GPUs = 2
+	GPUs_GPU_02c7070c = [ Id = "GPU-02c7070c"; Capability = 6.0; DeviceName = "Tesla P100-PCIE-16GB"; DeviceUuid = "02c7070c-0e71-2ac1-adbc-80d34470dcb7"; ECCEnabled = true; DriverVersion = 12.4; DevicePciBusId = "0000:3B:00.0"; GlobalMemoryMb = 16269; MaxSupportedVersion = 12040 ]
+	GPUs_GPU_649ceda8 = [ Id = "GPU-649ceda8"; Capability = 6.0; DeviceName = "Tesla P100-PCIE-16GB"; DeviceUuid = "649ceda8-3be2-4a04-5abc-72e513ca0dfd"; ECCEnabled = true; DriverVersion = 12.4; DevicePciBusId = "0000:D8:00.0"; GlobalMemoryMb = 16269; MaxSupportedVersion = 12040 ]
+	IoHeavy = 0
+	Memory = 40960
+...
+006 (250397.005.000) 2024-04-17 11:04:40 Image size of job updated: 440184
+	430  -  MemoryUsage of job (MB)
+	440132  -  ResidentSetSize of job (KB)
+...
+006 (250397.005.000) 2024-04-17 11:09:40 Image size of job updated: 19502912
+	19045  -  MemoryUsage of job (MB)
+	19501944  -  ResidentSetSize of job (KB)
+...
+006 (250397.005.000) 2024-04-17 11:14:41 Image size of job updated: 19521836
+	19063  -  MemoryUsage of job (MB)
+	19520432  -  ResidentSetSize of job (KB)
+...
+006 (250397.005.000) 2024-04-17 11:19:42 Image size of job updated: 19524140
+	19066  -  MemoryUsage of job (MB)
+	19523356  -  ResidentSetSize of job (KB)
+...
+006 (250397.005.000) 2024-04-17 11:24:42 Image size of job updated: 19524796
+	19067  -  MemoryUsage of job (MB)
+	19523992  -  ResidentSetSize of job (KB)
+...
+006 (250397.005.000) 2024-04-17 11:29:42 Image size of job updated: 19526376
+	19068  -  MemoryUsage of job (MB)
+	19525244  -  ResidentSetSize of job (KB)
+...
+006 (250397.005.000) 2024-04-17 11:34:42 Image size of job updated: 19527260
+	19068  -  MemoryUsage of job (MB)
+	19525260  -  ResidentSetSize of job (KB)
+...
+006 (250397.005.000) 2024-04-17 11:39:42 Image size of job updated: 19527908
+	19068  -  MemoryUsage of job (MB)
+	19525260  -  ResidentSetSize of job (KB)
+...
+006 (250397.005.000) 2024-04-17 11:59:42 Image size of job updated: 19528588
+	19068  -  MemoryUsage of job (MB)
+	19525260  -  ResidentSetSize of job (KB)
+...
+006 (250397.005.000) 2024-04-17 12:09:43 Image size of job updated: 19528588
+	19069  -  MemoryUsage of job (MB)
+	19525936  -  ResidentSetSize of job (KB)
+...
+040 (250397.005.000) 2024-04-17 12:37:02 Started transferring output files
+...
+040 (250397.005.000) 2024-04-17 12:37:03 Finished transferring output files
+...
+005 (250397.005.000) 2024-04-17 12:37:04 Job terminated.
+	(1) Normal termination (return value 0)
+		Usr 0 01:42:47, Sys 0 00:05:22  -  Run Remote Usage
+		Usr 0 00:00:00, Sys 0 00:00:00  -  Run Local Usage
+		Usr 0 01:42:47, Sys 0 00:05:22  -  Total Remote Usage
+		Usr 0 00:00:00, Sys 0 00:00:00  -  Total Local Usage
+	44870100  -  Run Bytes Sent By Job
+	15796412416  -  Run Bytes Received By Job
+	44870100  -  Total Bytes Sent By Job
+	15796412416  -  Total Bytes Received By Job
+	Partitionable Resources :       Usage  Request Allocated Assigned
+	   Cpus                 :        1.22        1         1 
+	   Disk (KB)            : 33637425    52428800  53635860 
+	   GPUs                 :        0.40        2         2 "GPU-02c7070c,GPU-649ceda8"
+	   GpusMemory (MB)      :      117                       
+	   IoHeavy              :                              0 
+	   Memory (MB)          :    19069       40960     40960 
+	   TimeExecute (s)      :     5552                       
+	   TimeSlotBusy (s)     :     5949                       
+
+	Job terminated of its own accord at 2024-04-17T17:37:02Z with exit-code 0.
+...
