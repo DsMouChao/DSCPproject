@@ -171,7 +171,7 @@ def graph(train_procss,filename):
 if __name__ == "__main__":
     args = get_args()
     model_dict = {'LeNet': LeNet, 'ResNet': ResNet, 'AlexNet': AlexNet}
-    model = model_dict[args.model](args.image_size, use_se=args.use_se,image_size=args.image_size)
+    model = model_dict[args.model](9, use_se=args.use_se,image_size=args.image_size)
     filename = filename_generator('output', args.model, args.image_size, args.use_se)
 
     train_dataloader, val_dataloader = train_val_data_process(args.image_size)

@@ -1,0 +1,6 @@
+data/
+data/._.DS_Store
+data/.DS_Store
+data/pathmnist.npz
+data/._pathmnist_224.npz
+data/pathmnist_224.npz

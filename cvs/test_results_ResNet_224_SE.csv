@@ -1,0 +1,2 @@
+Model,Image_Size,SE_Block,Accuracy
+ResNet,224,True,0.9200557103064068

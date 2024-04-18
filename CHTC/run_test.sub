@@ -1,0 +1,23 @@
+universe = vanilla
+log    =    log/myscript-chtc_$(Cluster)_$(Process).log
+error  =  error/myscript-chtc_$(Cluster)_$(Process).err
+output = output/myscript-chtc_$(Cluster)_$(Process).out
+
+executable = ./run_test.sh
+
+arguments ="$(model)"
+
+should_transfer_files = YES
+when_to_transfer_output = ON_EXIT
+transfer_input_files = http://proxy.chtc.wisc.edu/SQUID/chtc/python39.tar.gz, packages.tar.gz,data.tar, model_train.py, model.py,model_list.txt, model_test.py,output_LeNet_28x28_SE.pth,output_LeNet_28x28.pth,output_LeNet_224x224_SE.pth,output_LeNet_224x224.pth,output_ResNet_224x224_SE.pth,output_ResNet_224x224.pth,output_ResNet_28x28_SE.pth,output_ResNet_28x28.pth
+
++WantGPULab = true
++GPUJobLength = "medium"
+
+request_gpus = 2
+request_cpus = 1
+request_memory = 40GB
+request_disk = 50GB
+
+queue model from model_list.txt
+

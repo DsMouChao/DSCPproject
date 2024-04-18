@@ -1,6 +1,0 @@
-tar: Ignoring unknown extended header keyword 'SCHILY.fflags'
-tar: Ignoring unknown extended header keyword 'LIBARCHIVE.xattr.com.apple.FinderInfo'
-tar: Ignoring unknown extended header keyword 'LIBARCHIVE.xattr.com.apple.quarantine'
-tar: Ignoring unknown extended header keyword 'LIBARCHIVE.xattr.com.apple.metadata:kMDItemWhereFroms'
-/var/lib/condor/execute/slot1/dir_354490/packages/torch/nn/init.py:452: UserWarning: Initializing zero-element tensors is a no-op
-  warnings.warn("Initializing zero-element tensors is a no-op")

@@ -1,0 +1,107 @@
+data/
+data/._.DS_Store
+data/.DS_Store
+data/pathmnist.npz
+data/._pathmnist_224.npz
+data/pathmnist_224.npz
+Epoch 0/19
+----------
+Epoch: 0 Train Loss: 0.7245 Acc: 0.7304
+Epoch: 0 Val Loss: 0.4797 Acc: 0.8197
+Training complete in 2m 12s
+Epoch 1/19
+----------
+Epoch: 1 Train Loss: 0.3815 Acc: 0.8636
+Epoch: 1 Val Loss: 0.3942 Acc: 0.8617
+Training complete in 4m 28s
+Epoch 2/19
+----------
+Epoch: 2 Train Loss: 0.2437 Acc: 0.9164
+Epoch: 2 Val Loss: 0.4472 Acc: 0.8603
+Training complete in 6m 44s
+Epoch 3/19
+----------
+Epoch: 3 Train Loss: 0.1498 Acc: 0.9513
+Epoch: 3 Val Loss: 0.5585 Acc: 0.8412
+Training complete in 9m 7s
+Epoch 4/19
+----------
+Epoch: 4 Train Loss: 0.0972 Acc: 0.9686
+Epoch: 4 Val Loss: 0.5940 Acc: 0.8598
+Training complete in 11m 39s
+Epoch 5/19
+----------
+Epoch: 5 Train Loss: 0.0769 Acc: 0.9764
+Epoch: 5 Val Loss: 0.7945 Acc: 0.8407
+Training complete in 14m 14s
+Epoch 6/19
+----------
+Epoch: 6 Train Loss: 0.0677 Acc: 0.9797
+Epoch: 6 Val Loss: 0.7502 Acc: 0.8404
+Training complete in 16m 46s
+Epoch 7/19
+----------
+Epoch: 7 Train Loss: 0.0660 Acc: 0.9821
+Epoch: 7 Val Loss: 0.8055 Acc: 0.8556
+Training complete in 19m 22s
+Epoch 8/19
+----------
+Epoch: 8 Train Loss: 0.0548 Acc: 0.9841
+Epoch: 8 Val Loss: 0.8929 Acc: 0.8408
+Training complete in 21m 58s
+Epoch 9/19
+----------
+Epoch: 9 Train Loss: 0.0490 Acc: 0.9866
+Epoch: 9 Val Loss: 0.9966 Acc: 0.8470
+Training complete in 24m 22s
+Epoch 10/19
+----------
+Epoch: 10 Train Loss: 0.0578 Acc: 0.9852
+Epoch: 10 Val Loss: 1.1018 Acc: 0.8460
+Training complete in 26m 40s
+Epoch 11/19
+----------
+Epoch: 11 Train Loss: 0.0487 Acc: 0.9883
+Epoch: 11 Val Loss: 0.9538 Acc: 0.8563
+Training complete in 28m 52s
+Epoch 12/19
+----------
+Epoch: 12 Train Loss: 0.0442 Acc: 0.9885
+Epoch: 12 Val Loss: 0.9548 Acc: 0.8557
+Training complete in 31m 4s
+Epoch 13/19
+----------
+Epoch: 13 Train Loss: 0.0377 Acc: 0.9909
+Epoch: 13 Val Loss: 1.1418 Acc: 0.8466
+Training complete in 33m 9s
+Epoch 14/19
+----------
+Epoch: 14 Train Loss: 0.0418 Acc: 0.9899
+Epoch: 14 Val Loss: 1.0119 Acc: 0.8437
+Training complete in 35m 17s
+Epoch 15/19
+----------
+Epoch: 15 Train Loss: 0.0466 Acc: 0.9895
+Epoch: 15 Val Loss: 1.0950 Acc: 0.8517
+Training complete in 37m 25s
+Epoch 16/19
+----------
+Epoch: 16 Train Loss: 0.0396 Acc: 0.9908
+Epoch: 16 Val Loss: 1.4783 Acc: 0.8247
+Training complete in 39m 44s
+Epoch 17/19
+----------
+Epoch: 17 Train Loss: 0.0399 Acc: 0.9907
+Epoch: 17 Val Loss: 0.9322 Acc: 0.8572
+Training complete in 42m 11s
+Epoch 18/19
+----------
+Epoch: 18 Train Loss: 0.0393 Acc: 0.9921
+Epoch: 18 Val Loss: 1.1804 Acc: 0.8466
+Training complete in 45m 9s
+Epoch 19/19
+----------
+Epoch: 19 Train Loss: 0.0347 Acc: 0.9924
+Epoch: 19 Val Loss: 1.0442 Acc: 0.8473
+Training complete in 49m 8s
+Training data saved to output_LeNet_224x224_SE_training_data.csv

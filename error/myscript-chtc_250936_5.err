@@ -1,0 +1,10 @@
+tar: Ignoring unknown extended header keyword 'SCHILY.fflags'
+tar: Ignoring unknown extended header keyword 'LIBARCHIVE.xattr.com.apple.FinderInfo'
+tar: Ignoring unknown extended header keyword 'LIBARCHIVE.xattr.com.apple.quarantine'
+tar: Ignoring unknown extended header keyword 'LIBARCHIVE.xattr.com.apple.metadata:kMDItemWhereFroms'
+Traceback (most recent call last):
+  File "/var/lib/condor/execute/slot1/dir_3173041/model_test.py", line 74, in <module>
+    main()
+  File "/var/lib/condor/execute/slot1/dir_3173041/model_test.py", line 63, in main
+    unique_filename = 'test_results_{}_{}_{}_{}.csv'.format(args.model, args.image_size, 'SE' if args.use_se else 'noSE', datetime.now().strftime('%Y%m%d%H%M%S'))
+NameError: name 'datetime' is not defined

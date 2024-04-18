@@ -1,0 +1,17 @@
+000 (250758.006.000) 2024-04-17 22:36:57 Job submitted from host: <128.104.100.148:9618?addrs=128.104.100.148-9618+[2607-f388-107c-501-216-3eff-feb2-bc11]-9618&alias=learn.chtc.wisc.edu&noUDP&sock=schedd_1351356_64bc>
+...
+040 (250758.006.000) 2024-04-18 00:36:00 Started transferring input files
+	Transferring to host: <128.105.68.116:9618?addrs=128.105.68.116-9618+[2607-f388-2200-100-7ec2-55ff-fe99-a36a]-9618&alias=gpu4001.chtc.wisc.edu&noUDP&sock=slot1_5_767029_11b0_205134>
+...
+007 (250758.006.000) 2024-04-18 00:42:31 Shadow exception!
+	Error from slot1_5@gpu4001.chtc.wisc.edu: SHADOW at 128.104.100.148 failed to send file(s) to <128.105.68.116:35605>: |Error: reading from file /home/czhang759/DSCPproject/output_ResNet_224x224_SE.pth: (errno 2) No such file or directory; STARTER failed to receive file(s) from <128.104.100.148:9618>
+	0  -  Run Bytes Sent By Job
+	15840049152  -  Run Bytes Received By Job
+...
+012 (250758.006.000) 2024-04-18 00:42:31 Job was held.
+	Transfer input files failure at access point learn while sending files to execution point slot1_5@gpu4001.chtc.wisc.edu. Details: reading from file /home/czhang759/DSCPproject/output_ResNet_224x224_SE.pth: (errno 2) No such file or directory
+	Code 13 Subcode 2
+...
+009 (250758.006.000) 2024-04-18 09:31:31 Job was aborted.
+	via condor_rm (by user czhang759)
+...

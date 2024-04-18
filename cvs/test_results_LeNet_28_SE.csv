@@ -1,0 +1,2 @@
+Model,Image_Size,SE_Block,Accuracy
+LeNet,28,True,0.753899721448468
